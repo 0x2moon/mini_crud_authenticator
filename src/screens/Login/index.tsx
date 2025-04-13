@@ -1,6 +1,7 @@
 import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/button";
 import Logo from "@/assets/Frame.svg?react";
+import { NavLink } from "react-router";
 
 import "@/index.css";
 
@@ -18,29 +19,34 @@ function Login() {
               type="text"
               name="username"
               id="username"
-              placeholder="username"
+              placeholder="@Username"
             />
             <Input
               className="border-2 border-white rounded-3xl text-white h-[50px]"
               type="password"
               name="password"
               id="password"
-              placeholder="password"
+              placeholder="********"
             />
           </div>
           <div className="flex justify-center gap-4 p-3">
-            <Button
-              className="border-white border-2 text-rose-500 font-bold bg-accent-foreground w-[100px]"
-              variant="outline"
-            >
-              Criar
-            </Button>
-            <Button
-              className="border-white border-2 text-rose-500 font-bold bg-accent-foreground w-[100px]"
-              variant="outline"
-            >
-              Entrar
-            </Button>
+            <NavLink to="/SingIn" end>
+              <Button
+                className="border-white border-2 text-rose-500 font-bold bg-accent-foreground w-[100px]"
+                variant="outline"
+              >
+                SingIn
+              </Button>
+            </NavLink>
+
+            <NavLink to="/" end>
+              <Button
+                className="border-white border-2 text-rose-500 font-bold bg-accent-foreground w-[100px]"
+                variant="outline"
+              >
+                Login
+              </Button>
+            </NavLink>
           </div>
         </div>
       </div>

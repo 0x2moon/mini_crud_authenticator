@@ -3,8 +3,17 @@ import { Button } from "@/components/ui/button";
 import { UserX } from "lucide-react";
 import Logo from "@/assets/Frame.svg?react";
 import "@/index.css";
+import { useEffect } from "react";
+import { useNavigate } from "react-router";
 
 function Home() {
+  const isUserLoged = false;
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!isUserLoged) navigate("/login");
+  }, []);
+
   return (
     <>
       <div className="flex  justify-between p-8">
@@ -23,20 +32,20 @@ function Home() {
             type="text"
             name="username"
             id="username"
-            placeholder="username"
+            placeholder="Texto..."
           />
           <div className="flex justify-center gap-4 p-3">
             <Button
               className="border-white border-2 text-rose-500 font-bold bg-accent-foreground w-[100px]"
               variant="outline"
             >
-              Criar
+              Inserir
             </Button>
             <Button
               className="border-white border-2 text-rose-500 font-bold bg-accent-foreground w-[100px]"
               variant="outline"
             >
-              Entrar
+              Listar
             </Button>
           </div>
         </div>
