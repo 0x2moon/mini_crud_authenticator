@@ -1,24 +1,29 @@
-import { Input } from "@/components/ui/Input";
+import { useAuth } from "../../context/AuthContext";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/Input";
+import { useNavigate } from "react-router";
 import { UserX } from "lucide-react";
 import Logo from "@/assets/Frame.svg?react";
 import "@/index.css";
-import { useEffect } from "react";
-import { useNavigate } from "react-router";
 
 function Home() {
-  // const isUserLoged = true;
-  // const navigate = useNavigate();
+  const { logout, isAuthenticated } = useAuth();
+  const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   if (!isUserLoged) navigate("/login");
-  // }, []);
+  function logoutRenderLoginPage() {
+    logout();
+    navigate("/login");
+  }
+  console.log("Está autenticado?", isAuthenticated);
 
   return (
     <>
       <div className="flex  justify-between p-8">
         <label>Logado: Nome</label>
-        <Button className="rounded-2xl w-15 bg-rose-500">
+        <Button
+          className="rounded-2xl w-15 bg-rose-500"
+          onClick={logoutRenderLoginPage}
+        >
           <UserX />
         </Button>
       </div>
