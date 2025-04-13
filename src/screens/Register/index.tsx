@@ -4,7 +4,7 @@ import Logo from "@/assets/Frame.svg?react";
 
 import "@/index.css";
 
-function SingIn() {
+function Register() {
   return (
     <>
       <div className="flex w-screen h-screen items-center justify-center p-8">
@@ -40,4 +40,4 @@ function SingIn() {
   );
 }
 
-export default SingIn;
+export default Register;

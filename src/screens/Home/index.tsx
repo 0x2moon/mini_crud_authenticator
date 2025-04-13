@@ -7,12 +7,12 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router";
 
 function Home() {
-  const isUserLoged = false;
-  const navigate = useNavigate();
+  // const isUserLoged = true;
+  // const navigate = useNavigate();
 
-  useEffect(() => {
-    if (!isUserLoged) navigate("/login");
-  }, []);
+  // useEffect(() => {
+  //   if (!isUserLoged) navigate("/login");
+  // }, []);
 
   return (
     <>
